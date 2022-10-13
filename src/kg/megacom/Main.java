@@ -2,10 +2,7 @@ package kg.megacom;
 
 import kg.megacom.models.HeavyBox;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.TreeSet;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,8 +18,10 @@ public class Main {
         boxList.add(new HeavyBox("box4", 24));
 
         TreeSet<HeavyBox> treeSetBox = new TreeSet<>(boxList);
+        treeSetBox.add(new HeavyBox("box5",27));
         System.out.println("Вариант 1");
         treeSetBox.forEach(System.out::println);
+
 
         System.out.println("Вариант 2");
         for (HeavyBox item: treeSetBox){
@@ -37,6 +36,20 @@ public class Main {
         ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(1,2,3,4,4,5));
         HashSet<Integer> hashSetNum = new HashSet<>(numbers);
         System.out.println(hashSetNum);
+
+
+//       Создать очередь, содержащую объекты класса HeavyBox.
+//       Используем класс ArrayDeque.
+//       Поместить объекты в очередь с помощью метода offer().
+//       Удалить объекты методом poll().
+
+        ArrayDeque<HeavyBox> dequeList = new ArrayDeque<>();
+        dequeList.offer(new HeavyBox("box6",64));
+        dequeList.offer(new HeavyBox("box7",38));
+        dequeList.offer(new HeavyBox("box8",45));
+        System.out.println(dequeList);
+        dequeList.pollFirst();
+        System.out.println(dequeList);
 
 
 
